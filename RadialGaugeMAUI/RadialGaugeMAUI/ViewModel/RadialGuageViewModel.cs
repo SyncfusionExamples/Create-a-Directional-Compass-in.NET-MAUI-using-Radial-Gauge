@@ -93,7 +93,7 @@ namespace RadialGaugeMAUI
                 direction = "NW";
             }
 
-            ReadingText = $" Current location: {degree}\u00B0 {direction} ";
+            ReadingText = $"{degree}\u00B0 {direction} ";
         }
         private void ToggleCompass()
         {

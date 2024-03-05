@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RadialGaugeMAUI"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
              x:Class="RadialGaugeMAUI.MainPage">
     <VerticalStackLayout VerticalOptions="Center">
@@ -9,9 +10,24 @@
             <local:RadialGuageViewModel/>
         </VerticalStackLayout.BindingContext>
 
-        <Label x:Name="CompassLabel" Margin="0,30,0,0" FontAttributes="Italic,Bold"  VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding ReadingText}" IsVisible="true" />
+        <Label x:Name="CompassLabel" IsVisible="false"
+               HorizontalTextAlignment="Center"
+               FontAttributes="Italic,Bold"
+               VerticalOptions="Center"
+               HorizontalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Current location" />
+                    <Span Text="{x:Static system:Environment.NewLine}" />
+                    <Span Text="{Binding ReadingText}"
+                          FontAutoScalingEnabled="True"
+                          FontAttributes="Italic,Bold"
+                          FontSize="20" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
 
-        <gauge:SfRadialGauge x:Name="compassGauge" Rotation="{Binding RotationAngle}"  >
+        <gauge:SfRadialGauge x:Name="compassGauge">
             <gauge:SfRadialGauge.Axes>
                 <gauge:RadialAxis ShowAxisLine="False"
                             TickPosition="Outside"
@@ -19,7 +35,7 @@
                             StartAngle="270" 
                             EndAngle="270"
                             CanRotateLabels="True"
-                            RadiusFactor="0.5"
+                            RadiusFactor="0.6"
                             MinorTicksPerInterval="5"
                             Minimum="0"
                             Maximum="360"
@@ -36,7 +52,7 @@
                                          Length="10" />
                     </gauge:RadialAxis.MinorTickStyle>
                     <gauge:RadialAxis.Pointers>
-                        <gauge:ShapePointer Value="{Binding Reading}" Offset="-45" OffsetUnit="Pixel"
+                        <gauge:ShapePointer Offset="-100" OffsetUnit="Pixel"
                                       ShapeType="InvertedTriangle" />
                         <gauge:NeedlePointer Value="0"
                                        NeedleLengthUnit="Factor"
