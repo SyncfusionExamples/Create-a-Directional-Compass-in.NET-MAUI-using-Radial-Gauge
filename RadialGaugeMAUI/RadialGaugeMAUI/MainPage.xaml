@@ -10,7 +10,7 @@
             <local:RadialGuageViewModel/>
         </VerticalStackLayout.BindingContext>
 
-        <Label x:Name="CompassLabel" IsVisible="false"
+        <Label x:Name="CompassLabel"
                HorizontalTextAlignment="Center"
                FontAttributes="Italic,Bold"
                VerticalOptions="Center"
@@ -27,7 +27,7 @@
             </Label.FormattedText>
         </Label>
 
-        <gauge:SfRadialGauge x:Name="compassGauge">
+        <gauge:SfRadialGauge x:Name="compassGauge" Rotation="{Binding RotationAngle}">
             <gauge:SfRadialGauge.Axes>
                 <gauge:RadialAxis ShowAxisLine="False"
                             TickPosition="Outside"
@@ -52,7 +52,7 @@
                                          Length="10" />
                     </gauge:RadialAxis.MinorTickStyle>
                     <gauge:RadialAxis.Pointers>
-                        <gauge:ShapePointer Offset="-100" OffsetUnit="Pixel"
+                        <gauge:ShapePointer Value="{Binding Reading}" Offset="-100" OffsetUnit="Pixel"
                                       ShapeType="InvertedTriangle" />
                         <gauge:NeedlePointer Value="0"
                                        NeedleLengthUnit="Factor"
