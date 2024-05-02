@@ -68,7 +68,7 @@ namespace RadialGaugeMAUI
             {
                 direction = "NE";
             }
-            else if (degree >= 90 && degree <= 120)
+            else if (degree >= 90 && degree < 120)
             {
                 direction = "E";
             }
@@ -76,7 +76,7 @@ namespace RadialGaugeMAUI
             {
                 direction = "SE";
             }
-            else if (degree >= 180 && degree <= 210)
+            else if (degree >= 180 && degree < 210)
             {
                 direction = "S";
             }
@@ -84,7 +84,7 @@ namespace RadialGaugeMAUI
             {
                 direction = "SW";
             }
-            else if (degree >= 270 && degree <= 300)
+            else if (degree >= 270 && degree < 300)
             {
                 direction = "W";
             }
