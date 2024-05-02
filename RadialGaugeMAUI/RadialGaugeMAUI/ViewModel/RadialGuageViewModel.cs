@@ -88,7 +88,7 @@ namespace RadialGaugeMAUI
             {
                 direction = "W";
             }
-            else if (degree >= 300 && degree < 360)
+            else if (degree >= 300 && degree <= 360)
             {
                 direction = "NW";
             }
