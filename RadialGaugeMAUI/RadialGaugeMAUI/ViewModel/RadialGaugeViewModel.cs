@@ -2,9 +2,9 @@
 
 namespace RadialGaugeMAUI
 {
-    public class RadialGuageViewModel : INotifyPropertyChanged
+    public class RadialGaugeViewModel : INotifyPropertyChanged
     {
-        public RadialGuageViewModel()
+        public RadialGaugeViewModel()
         {
             this.ToggleCompass();
         }
