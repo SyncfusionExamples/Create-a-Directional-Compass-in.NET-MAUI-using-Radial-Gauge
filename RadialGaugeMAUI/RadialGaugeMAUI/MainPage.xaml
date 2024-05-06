@@ -7,7 +7,7 @@
              x:Class="RadialGaugeMAUI.MainPage">
     <VerticalStackLayout VerticalOptions="Center">
         <VerticalStackLayout.BindingContext>
-            <local:RadialGuageViewModel/>
+            <local:RadialGaugeViewModel/>
         </VerticalStackLayout.BindingContext>
 
         <Label x:Name="CompassLabel"
