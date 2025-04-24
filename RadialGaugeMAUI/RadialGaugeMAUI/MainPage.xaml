@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:RadialGaugeMAUI"
              xmlns:system="clr-namespace:System;assembly=netstandard"
              xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
+             x:DataType="local:RadialGaugeViewModel"
              x:Class="RadialGaugeMAUI.MainPage">
     <VerticalStackLayout VerticalOptions="Center">
         <VerticalStackLayout.BindingContext>
